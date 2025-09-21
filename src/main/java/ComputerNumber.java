@@ -4,28 +4,28 @@ import camp.nextstep.edu.missionutils.Randoms;
 
 public class ComputerNumber {
 
-    private List<Integer> computerNumber;
+    private final List<Integer> number;
 
     public ComputerNumber() {
-        this.computerNumber = computerRandomNum();
+        this.number = computerRandomNum();
     }
 
     /**
      * 랜덤 숫자 생성
      */
     private List<Integer> computerRandomNum() {
-        List<Integer> numbers = new ArrayList<>();
-        while (numbers.size() < 3) {
+        List<Integer> computer = new ArrayList<>();
+        while (computer.size() < 3) {
             int randomNum = Randoms.pickNumberInRange(1, 9);
             // 서로 다른 숫자만 추가
-            if (!numbers.contains(randomNum)) {
-                numbers.add(randomNum);
+            if (!computer.contains(randomNum)) {
+                computer.add(randomNum);
             }
         }
-        return numbers;
+        return computer;
     }
 
     private List<Integer> getComputerNumber() {
-        return computerNumber;
+        return number;
     }
 }
