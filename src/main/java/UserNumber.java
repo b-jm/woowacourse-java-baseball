@@ -23,7 +23,7 @@ public class UserNumber {
             int number = Character.getNumericValue(c);
 
             if (number < 1 || number > 9 || userNum.contains(number)) {
-                throw new IllegalArgumentException("0은 사용할 수 없습니다.");
+                throw new IllegalArgumentException("입력은 1부터 9까지 서로 다른 3자리 숫자여야 합니다.");
             }
 
             userNum.add(number);
@@ -32,7 +32,7 @@ public class UserNumber {
         return userNum;
     }
 
-    private List<Integer> getUserNumbers() {
+    public List<Integer> getNumber() {
         return number;
     }
 }
