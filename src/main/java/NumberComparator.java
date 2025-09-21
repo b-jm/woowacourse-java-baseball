@@ -1,15 +1,19 @@
+import java.util.List;
+
 public class NumberComparator {
 
-    private int calculateStrike(UserNumber userNumber, ComputerNumber computerNumber) {
+    public static GameResult compare(List<Integer> computerNumber, List<Integer> userNumber) {
         int strike = 0;
+        int ball = 0;
 
         for (int i = 0; i < 3; i++) {
-
+            if (computerNumber.get(i).equals(userNumber.get(i))) {
+                strike++;
+            } else if (userNumber.contains(computerNumber.get(i))) {
+                ball++;
+            }
         }
-    }
 
-
-    public GameResult compare(UserNumber userNumber , ComputerNumber computerNumber) {
-        int strike = calculateStrike(userNumber, computerNumber);
+        return new GameResult(strike, ball);
     }
 }
